@@ -18,7 +18,7 @@ public class FXMLController {
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
-
+    	
     }
 }
 

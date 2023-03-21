@@ -43,13 +43,13 @@
                         <Font name="Arial" size="12.0" />
                      </font>
                   </Label>
-                  <ComboBox id="cmbChooseLanguage" prefHeight="26.0" prefWidth="170.0" promptText="Choose" GridPane.columnIndex="1" />
+                  <ComboBox id="cmbChooseLanguage" fx:id="cmbChooseLanguage" prefHeight="26.0" prefWidth="170.0" promptText="Choose" GridPane.columnIndex="1" />
                </children>
                <VBox.margin>
                   <Insets left="10.0" right="10.0" />
                </VBox.margin>
             </GridPane>
-            <TextArea id="txtAreaUserInput" prefHeight="200.0" prefWidth="200.0">
+            <TextArea fx:id="txtAreaUserInput" prefHeight="200.0" prefWidth="200.0">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
@@ -66,7 +66,7 @@
                   <Insets left="10.0" right="10.0" />
                </VBox.margin>
                <children>
-                  <Button id="btnSpellCheck" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" text="Spell Check" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                  <Button fx:id="btnSpellCheck" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" text="Spell Check" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
@@ -78,7 +78,7 @@
                   <Insets left="10.0" />
                </VBox.margin>
             </Label>
-            <TextArea id="txtAreaWrongWords" prefHeight="153.0" prefWidth="503.0">
+            <TextArea fx:id="txtAreaWrongWords" prefHeight="153.0" prefWidth="503.0">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
@@ -95,15 +95,15 @@
                   <Insets left="10.0" right="10.0" />
                </VBox.margin>
                <children>
-                  <Button id="btClearText" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="86.0" text="Clear Text" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                  <Button fx:id="btClearText" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="86.0" text="Clear Text" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
                   </Button>
-                  <Label id="lblErrors" text="The text contains" />
+                  <Label fx:id="lblErrors" text="The text contains" />
                </children>
             </GridPane>
-            <Label id="lblPerformance" text="Spell check complteted in">
+            <Label fx:id="lblPerformance" text="Spell check complteted in">
                <VBox.margin>
                   <Insets left="10.0" top="10.0" />
                </VBox.margin>
