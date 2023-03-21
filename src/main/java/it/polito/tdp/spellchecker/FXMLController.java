@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.MouseEvent;
 
 public class FXMLController {
 
@@ -40,6 +41,16 @@ public class FXMLController {
 
     @FXML // fx:id="txtAreaWrongWords"
     private TextArea txtAreaWrongWords; // Value injected by FXMLLoader
+
+    @FXML
+    void onMouseClickedClearText(MouseEvent event) {
+
+    }
+
+    @FXML
+    void onMouseClickedSpellCheck(MouseEvent event) {
+
+    }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
