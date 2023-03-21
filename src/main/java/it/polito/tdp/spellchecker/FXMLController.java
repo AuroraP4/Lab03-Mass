@@ -28,7 +28,7 @@ public class FXMLController {
     private Button btnSpellCheck; // Value injected by FXMLLoader
 
     @FXML // fx:id="cmbChooseLanguage"
-    private ComboBox<?> cmbChooseLanguage; // Value injected by FXMLLoader
+    private ComboBox<String> cmbChooseLanguage; // Value injected by FXMLLoader
 
     @FXML // fx:id="lblErrors"
     private Label lblErrors; // Value injected by FXMLLoader
@@ -61,7 +61,9 @@ public class FXMLController {
         assert lblPerformance != null : "fx:id=\"lblPerformance\" was not injected: check your FXML file 'Scene.fxml'.";
         assert txtAreaUserInput != null : "fx:id=\"txtAreaUserInput\" was not injected: check your FXML file 'Scene.fxml'.";
         assert txtAreaWrongWords != null : "fx:id=\"txtAreaWrongWords\" was not injected: check your FXML file 'Scene.fxml'.";
-
+        
+        cmbChooseLanguage.getItems().addAll("English", "Italian");
+        
     }
 
 }
