@@ -4,7 +4,6 @@
 
 package it.polito.tdp.spellchecker;
 
-import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
