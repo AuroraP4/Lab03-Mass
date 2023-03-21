@@ -11,8 +11,8 @@ import java.util.Set;
 public class Dictionary {
 	
 	public enum Languages {
-		ITALIAN("Italian.txt"),
-		ENGLISH("English.txt");
+		ITALIAN("src/main/resources/Italian.txt"),
+		ENGLISH("src/main/resources/English.txt");
 		
 		private String filename;
 		
@@ -23,9 +23,13 @@ public class Dictionary {
 	
 	private Set<String> words;
 	
+	public Dictionary(Languages lang) {
+		this.loadDictionary(lang);
+	}
+	
 	public Dictionary loadDictionary(Languages lang) {
 		try {
-			loadFile(lang.filename);
+			words = loadFile(lang.filename);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
