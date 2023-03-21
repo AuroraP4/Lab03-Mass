@@ -44,12 +44,14 @@ public class FXMLController {
 
     @FXML
     void onMouseClickedClearText(MouseEvent event) {
-
+    	txtAreaUserInput.clear();
+    	txtAreaWrongWords.clear();
+    	lblErrors.setText("");
     }
 
     @FXML
     void onMouseClickedSpellCheck(MouseEvent event) {
-
+    	
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
