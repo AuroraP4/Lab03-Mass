@@ -53,11 +53,6 @@ public class FXMLController {
 
     @FXML // fx:id="txtAreaWrongWords"
     private TextArea txtAreaWrongWords; // Value injected by FXMLLoader
-   
-    @FXML
-    void pippo(ActionEvent event) {
-    	System.out.println("ciao");
-    }
 
     @FXML
     void onContextMenuRequestedcmbChooseLanguage(ContextMenuEvent event) {
@@ -85,7 +80,7 @@ public class FXMLController {
     		return;
     	}
     	
-    	List<String> typoos = dictionary.typoos(userInput);
+    	List<String> typoos = dictionary.findTypoos(userInput);
     	String outputTypoos = "";
     	for (String typoo : typoos) {
     		outputTypoos += typoo + "\n";

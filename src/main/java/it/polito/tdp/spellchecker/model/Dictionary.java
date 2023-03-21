@@ -44,7 +44,7 @@ public class Dictionary {
 		return words.contains(word);
 	}
 	
-	public List<String> typoos(String userInput) {
+	public List<String> findTypoos(String userInput) {
 		
 		userInput = userInput.trim();
 		userInput.replaceAll("[.,\\/#!$%\\^&\\*;:{}=\\-_`~()\\[\\]\"]", "");
