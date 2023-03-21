@@ -10,26 +10,11 @@ import java.util.Set;
 
 public class Dictionary {
 	
-	public enum Languages {
-		ITALIAN("src/main/resources/Italian.txt"),
-		ENGLISH("src/main/resources/English.txt");
-		
-		private String filename;
-		
-		private Languages(String filename) {
-			this.filename = filename;
-		}
-	}
-	
 	private Set<String> words;
 	
-	public Dictionary(Languages lang) {
-		this.loadDictionary(lang);
-	}
-	
-	public Dictionary loadDictionary(Languages lang) {
+	public Dictionary loadDictionary(Language lang) {
 		try {
-			words = loadFile(lang.filename);
+			words = loadFile(lang.getFileName());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -69,6 +54,7 @@ public class Dictionary {
 		
 		List<String> wordsWithTypoos = new ArrayList<String>();
 		for (String word : words) {
+			word = word.toLowerCase();
 			if (!this.contains(word)) {
 				wordsWithTypoos.add(word);
 			}
