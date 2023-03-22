@@ -66,7 +66,7 @@ public class FXMLController {
 
     @FXML
     void onMouseClickedSpellCheck(MouseEvent event) {
-    	tic();
+    	
     	if (cmbChooseLanguage.getValue() == null) {
     		txtAreaWrongWords.setText("Choose a languge!");
     		return;
@@ -78,11 +78,15 @@ public class FXMLController {
     		return;
     	}
     	
+    	tic();
     	List<String> typoos = dictionary.findTypoos(userInput);
+    	toc();
+    	
     	String outputTypoos = "";
     	for (String typoo : typoos) {
     		outputTypoos += typoo + "\n";
     	}
+    	
     	txtAreaWrongWords.setText(outputTypoos);
     	lblErrors.setTextFill(Color.color(1, 0, 0));
     	
@@ -91,7 +95,6 @@ public class FXMLController {
     	}
     	
     	lblErrors.setText("There are " + typoos.size() + " error(s) in your text!");
-    	toc();
     	lblPerformance.setText("Code executed in " + toc + " nano seconds");
     }
     
