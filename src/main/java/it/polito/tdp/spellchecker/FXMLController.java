@@ -17,6 +17,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 
 public class FXMLController {
 
@@ -25,6 +26,9 @@ public class FXMLController {
 	public void setModel(Dictionary model) {
 		this.dictionary = model;
 	}
+	
+	private long tic;
+	private long toc;
 	
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
@@ -52,11 +56,6 @@ public class FXMLController {
 
     @FXML // fx:id="txtAreaWrongWords"
     private TextArea txtAreaWrongWords; // Value injected by FXMLLoader
-
-    @FXML
-    void onContextMenuRequestedcmbChooseLanguage(ContextMenuEvent event) {
-    	System.out.println("Triggered");
-    }
     
     @FXML
     void onMouseClickedClearText(MouseEvent event) {
@@ -67,7 +66,7 @@ public class FXMLController {
 
     @FXML
     void onMouseClickedSpellCheck(MouseEvent event) {
-    	
+    	tic();
     	if (cmbChooseLanguage.getValue() == null) {
     		txtAreaWrongWords.setText("Choose a languge!");
     		return;
@@ -85,12 +84,25 @@ public class FXMLController {
     		outputTypoos += typoo + "\n";
     	}
     	txtAreaWrongWords.setText(outputTypoos);
+    	lblErrors.setTextFill(Color.color(1, 0, 0));
     	
     	if (typoos.size() == 0) {
     		txtAreaWrongWords.setText("No errors here! Yeee!");
     	}
+    	
+    	lblErrors.setText("There are " + typoos.size() + " error(s) in your text!");
+    	toc();
+    	lblPerformance.setText("Code executed in " + toc + " nano seconds");
     }
-
+    
+    void tic() {
+    	tic = System.nanoTime();
+    } 
+    
+    void toc() {
+    	toc = System.nanoTime() - tic;
+    }
+    
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
         assert btClearText != null : "fx:id=\"btClearText\" was not injected: check your FXML file 'Scene.fxml'.";

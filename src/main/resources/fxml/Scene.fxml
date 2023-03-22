@@ -100,10 +100,10 @@
                         <Insets />
                      </GridPane.margin>
                   </Button>
-                  <Label fx:id="lblErrors" text="The text contains" />
+                  <Label fx:id="lblErrors" />
                </children>
             </GridPane>
-            <Label fx:id="lblPerformance" text="Spell check complteted in">
+            <Label fx:id="lblPerformance">
                <VBox.margin>
                   <Insets left="10.0" top="10.0" />
                </VBox.margin>
